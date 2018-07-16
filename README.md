@@ -2,4 +2,4 @@
 
 
 create database
-docker-compose run web rake db:create
+`docker-compose run web rake db:create`
