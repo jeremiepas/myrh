@@ -1,6 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  birthedate: 2018-07-16
   lastname: MyString
   name: MyString
   password: MyString
@@ -8,6 +9,7 @@ one:
   description: MyText
 
 two:
+  birthedate: 2018-07-16
   lastname: MyString
   name: MyString
   password: MyString
