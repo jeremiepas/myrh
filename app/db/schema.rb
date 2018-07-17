@@ -16,6 +16,8 @@ ActiveRecord::Schema.define(version: 20180717110813) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.index ["user_id"], name: "index_compagnies_on_user_id", using: :btree
   end
 
   create_table "quizzes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -43,4 +45,5 @@ ActiveRecord::Schema.define(version: 20180717110813) do
 
   add_foreign_key "quizzes", "compagnies", column: "compagnie_id"
   add_foreign_key "quizzes", "users"
+  add_foreign_key "compagnies", "users"
 end
