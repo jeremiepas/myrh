@@ -4,10 +4,10 @@ one:
   name: MyString
   question: MyText
   user: one
-  company: one
+  compagnie: one
 
 two:
   name: MyString
   question: MyText
   user: two
-  company: two
+  compagnie: two
