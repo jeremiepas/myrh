@@ -6,13 +6,18 @@
 </p>
 
 <p>
+  <strong>Question:</strong>
+  <%= @quiz.question %>
+</p>
+
+<p>
   <strong>User:</strong>
   <%= @quiz.user %>
 </p>
 
 <p>
-  <strong>Company:</strong>
-  <%= @quiz.company %>
+  <strong>Compagnie:</strong>
+  <%= @quiz.compagnie %>
 </p>
 
 <%= link_to 'Edit', edit_quiz_path(@quiz) %> |

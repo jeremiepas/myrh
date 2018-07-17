@@ -2,10 +2,12 @@
 
 one:
   name: MyString
-  user: 
-  company: 
+  question: MyText
+  user: one
+  compagnie: one
 
 two:
   name: MyString
-  user: 
-  company: 
+  question: MyText
+  user: two
+  compagnie: two
