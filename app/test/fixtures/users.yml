@@ -1,17 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  birthedate: 2018-07-16
+  birthdate: 2018-07-17
   lastname: MyString
   name: MyString
   password: MyString
-  email: MyString
   description: MyText
+  email: MyString
+  compagny: one
 
 two:
-  birthedate: 2018-07-16
+  birthdate: 2018-07-17
   lastname: MyString
   name: MyString
   password: MyString
-  email: MyString
   description: MyText
+  email: MyString
+  compagny: two

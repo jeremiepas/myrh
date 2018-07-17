@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>City:</strong>
+  <%= @announce.city %>
+</p>
+
+<p>
+  <strong>Compagny:</strong>
+  <%= @announce.compagny %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @announce.date %>
+</p>
+
+<p>
+  <strong>Quizze:</strong>
+  <%= @announce.quizze %>
+</p>
+
+<%= link_to 'Edit', edit_announce_path(@announce) %> |
+<%= link_to 'Back', announces_path %>
