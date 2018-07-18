@@ -17,7 +17,7 @@ class CompagniesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create compagny" do
     assert_difference('Compagny.count') do
-      post compagnies_url, params: { compagny: { name: @compagny.name } }
+      post compagnies_url, params: { compagny: {  } }
     end
 
     assert_redirected_to compagny_url(Compagny.last)
@@ -34,7 +34,7 @@ class CompagniesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update compagny" do
-    patch compagny_url(@compagny), params: { compagny: { name: @compagny.name } }
+    patch compagny_url(@compagny), params: { compagny: {  } }
     assert_redirected_to compagny_url(@compagny)
   end
 

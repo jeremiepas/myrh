@@ -69,6 +69,6 @@ class CompagniesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def compagny_params
-      params.require(:compagny).permit(:name)
+      params.fetch(:compagny, {})
     end
 end

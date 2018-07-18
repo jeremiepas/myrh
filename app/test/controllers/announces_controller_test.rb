@@ -17,7 +17,7 @@ class AnnouncesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create announce" do
     assert_difference('Announce.count') do
-      post announces_url, params: { announce: { city_id: @announce.city_id, compagny_id: @announce.compagny_id, date: @announce.date, quizze_id: @announce.quizze_id } }
+      post announces_url, params: { announce: {  } }
     end
 
     assert_redirected_to announce_url(Announce.last)
@@ -34,7 +34,7 @@ class AnnouncesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update announce" do
-    patch announce_url(@announce), params: { announce: { city_id: @announce.city_id, compagny_id: @announce.compagny_id, date: @announce.date, quizze_id: @announce.quizze_id } }
+    patch announce_url(@announce), params: { announce: {  } }
     assert_redirected_to announce_url(@announce)
   end
 

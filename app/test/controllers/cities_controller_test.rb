@@ -17,7 +17,7 @@ class CitiesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create city" do
     assert_difference('City.count') do
-      post cities_url, params: { city: { compagny_id: @city.compagny_id, name: @city.name } }
+      post cities_url, params: { city: {  } }
     end
 
     assert_redirected_to city_url(City.last)
@@ -34,7 +34,7 @@ class CitiesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update city" do
-    patch city_url(@city), params: { city: { compagny_id: @city.compagny_id, name: @city.name } }
+    patch city_url(@city), params: { city: {  } }
     assert_redirected_to city_url(@city)
   end
 
