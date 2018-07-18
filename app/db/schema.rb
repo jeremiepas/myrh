@@ -13,6 +13,7 @@
 ActiveRecord::Schema.define(version: 20180718170934) do
 
   create_table "announces", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name"
     t.integer  "city_id"
     t.integer  "compagny_id"
     t.date     "date"
