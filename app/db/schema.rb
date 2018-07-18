@@ -10,14 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180717110813) do
+ActiveRecord::Schema.define(version: 20180717170936) do
+
+  create_table "announces", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "city_id"
+    t.integer  "compagny_id"
+    t.date     "date"
+    t.integer  "quizze_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["city_id"], name: "index_announces_on_city_id", using: :btree
+    t.index ["compagny_id"], name: "index_announces_on_compagny_id", using: :btree
+    t.index ["quizze_id"], name: "index_announces_on_quizze_id", using: :btree
+  end
+
+  create_table "cities", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name"
+    t.integer  "compagny_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["compagny_id"], name: "index_cities_on_compagny_id", using: :btree
+  end
 
   create_table "compagnies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "user_id"
-    t.index ["user_id"], name: "index_compagnies_on_user_id", using: :btree
   end
 
   create_table "quizzes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -31,19 +49,34 @@ ActiveRecord::Schema.define(version: 20180717110813) do
     t.index ["user_id"], name: "index_quizzes_on_user_id", using: :btree
   end
 
-  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.date     "birthedate"
-    t.string   "lastname"
-    t.string   "name"
-    t.string   "password"
-    t.string   "email"
-    t.text     "description", limit: 65535
-    t.string   "roles"
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+  create_table "responses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id"
+    t.integer  "quizze_id"
+    t.text     "answers",    limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["quizze_id"], name: "index_responses_on_quizze_id", using: :btree
+    t.index ["user_id"], name: "index_responses_on_user_id", using: :btree
   end
 
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.date    "birthdate"
+    t.string  "lastname"
+    t.string  "name"
+    t.string  "password"
+    t.text    "description", limit: 65535
+    t.string  "email"
+    t.integer "compagny_id"
+    t.index ["compagny_id"], name: "index_users_on_compagny_id", using: :btree
+  end
+
+  add_foreign_key "announces", "cities"
+  add_foreign_key "announces", "compagnies"
+  add_foreign_key "announces", "quizzes", column: "quizze_id"
+  add_foreign_key "cities", "compagnies"
   add_foreign_key "quizzes", "compagnies", column: "compagnie_id"
   add_foreign_key "quizzes", "users"
-  add_foreign_key "compagnies", "users"
+  add_foreign_key "responses", "quizzes", column: "quizze_id"
+  add_foreign_key "responses", "users"
+  add_foreign_key "users", "compagnies"
 end

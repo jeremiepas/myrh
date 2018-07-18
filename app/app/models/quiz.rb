@@ -1,4 +1,4 @@
 class Quiz < ApplicationRecord
   belongs_to :user
-  belongs_to :compagnie
+  belongs_to :compagny
 end
