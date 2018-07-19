@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :quizzes
   resources :users
   resources :sessions
+  get '/', to: 'homepage#show'
   get '/inscription' => 'users#new'
   get '/login'     => 'sessions#login'
   post '/login'    => 'sessions#create'
