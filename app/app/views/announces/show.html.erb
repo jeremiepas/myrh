@@ -2,12 +2,12 @@
 
 <p>
   <strong>City:</strong>
-  <%= @announce.city %>
+  <%= @announce.city[:name] %>
 </p>
 
 <p>
   <strong>Compagny:</strong>
-  <%= @announce.compagny %>
+  <%= @announce.compagny[:name] %>
 </p>
 
 <p>
@@ -17,7 +17,7 @@
 
 <p>
   <strong>Quizze:</strong>
-  <%= @announce.quizze %>
+  <%= @announce.quiz[:name] %>
 </p>
 
 <%= link_to 'Edit', edit_announce_path(@announce) %> |
