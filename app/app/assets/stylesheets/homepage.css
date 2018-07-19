@@ -1,0 +1,33 @@
+/*
+* @Author: alexandru pop
+* @Date:   2018-07-18 16:19:35
+* @Last Modified by:   alexandru pop
+* @Last Modified time: 2018-07-19 10:54:08
+*/
+
+
+h1 {
+	text-align: center;
+}
+
+
+.annonce{
+	min-width: 250px;
+	min-height: 300px;
+	margin:2%;
+	background-color: #74B9E8;
+}
+
+button{
+	background-color: #403F63;;
+	color: white;
+}
+
+#annonces_container{
+	margin-top:10%;
+}
+
+
+.entreprise-name, .post-title{
+	color:#403F63;
+}
