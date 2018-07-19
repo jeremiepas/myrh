@@ -1,93 +1,106 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
+  <a class="navbar-brand" href="home">myrh</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="home">Home <span class="sr-only">(current)</span></a>
-      </li>
 
+      <%# If Connected %>
       <% if @current_user %>
-        user is cennected
-          <%# Pour les entreprises %>
-          <% if @current_user[:compagny_id] %>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Quizz
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="quizzes">All</a>
-                  <%= link_to 'New Quiz', new_quiz_path %>
-                </div>
-              </li>
 
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Announces
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="announces">All</a>
-                  <%= link_to 'New Announce', new_announce_path %>
-                </div>
-              </li>
-
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Responses
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="responses">All</a>
-                </div>
-              </li>
-
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                 Cities
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                 <a class="dropdown-item" href="cities">All</a>
-                 <%= link_to 'New City', new_city_path %>
-                </div>
-              </li>
-
-          <%# Pour les users %>
-          <% else %>
-              if user
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Announces
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="announces">All</a>
-                  <%= link_to 'New Announce', new_announce_path %>
-                </div>
-              </li>
-          <% end %>
-
-          <%# Si log %>
-
+        <%# Si je suis un entrepreneur %>
+        <% if @current_user[:compagny_id] %>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Profil
+              Quizz
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <%# link_to 'Show', user %>
-              <%# link_to 'Edit', edit_user_path(user) %>
-              <%# link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %>
+              <a class="dropdown-item" href="quizzes">All</a>
+              <%= link_to 'New Quiz', new_quiz_path %>
             </div>
           </li>
 
-      <%# si pas log %>
-      <% else %>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Announces
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="announces">All</a>
+              <%= link_to 'New Announce', new_announce_path %>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Responses
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="responses">All</a>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Cities
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+             <a class="dropdown-item" href="cities">All</a>
+             <%= link_to 'New City', new_city_path %>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <%= @current_user[:name] %>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <%# link_to 'Show', @current_user %>
+            <%# link_to 'Edit', edit_user_path(@current_user) %>
+            <%# link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+        </li>
+
+        <%# Si je suis un client connecte %>
+        <% else %>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Announces
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="announces">All</a>
+              <%= link_to 'New Announce', new_announce_path %>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <%= @current_user[:name] %>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <%# link_to 'Show', user %>
+            <%# link_to 'Edit', edit_user_path(user) %>
+            <%# link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+        </li>
+        <% end %>
+
+      <%# Si pas log %>
+      <% else %>          
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Announces
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="announces">All</a>
+            <%= link_to 'New Announce', new_announce_path %>
+          </div>
+        </li>
         <li class="nav-item active">
           <a class="nav-link" href="login">Login<span class="sr-only">(current)</span></a>
         </li>
       <% end %>
-
-
     </ul>
   </div>
 </nav>
