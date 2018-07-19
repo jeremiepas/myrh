@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+# sessions user
+gem 'bcrypt-ruby', :require => 'bcrypt' 
 # Bundle  gestion admin instead: gem 'rails_admin', github: 'sferik/rails_admin'
 gem 'rails_admin', '~> 1.3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
