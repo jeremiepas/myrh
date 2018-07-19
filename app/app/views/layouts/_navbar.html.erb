@@ -59,6 +59,7 @@
             <%# link_to 'Show', @current_user %>
             <%# link_to 'Edit', edit_user_path(@current_user) %>
             <%# link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <a class="dropdown-item" href="/logout">Logout</a>
           </div>
         </li>
 
@@ -70,7 +71,6 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="announces">All</a>
-              <%= link_to 'New Announce', new_announce_path %>
             </div>
           </li>
 
@@ -82,6 +82,7 @@
             <%# link_to 'Show', user %>
             <%# link_to 'Edit', edit_user_path(user) %>
             <%# link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <a class="dropdown-item" href="/logout">Logout</a>
           </div>
         </li>
         <% end %>
@@ -94,7 +95,6 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="announces">All</a>
-            <%= link_to 'New Announce', new_announce_path %>
           </div>
         </li>
         <li class="nav-item active">
