@@ -7,4 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 1.times { Compagny.create!(name: "Microsoft") }
-10.times { User.create!(birthdate: Time.now, name: "John", lastname: "Doe", password: "123", email: "johnDoe@gmail.com", description: "Il a un gros zizi", compagny_id: false) }
+1.times { Compagny.create!(name: "Samsung") }
+10.times { User.create!(birthdate: Time.now, name: "John", lastname: "Doe", password: "123456789", email: "johnDoe@gmail.com", description: "") }
+1.times { User.create!(birthdate: Time.now, name: "Recruteur", lastname: "Recruteur", password: "123456789", email: "recruteur@gmail.com", description: "", compagny_id: 1) }
+1.times { City.create!(name: "Paris", compagny_id: 1) }
+1.times { Quiz.create!(name: "Quiz 1", question: "[{name: Fumez vous?, type: bool}]", user_id: 11) }
+1.times { Announce.create!(city_id: 1, compagny_id: 1, date: Time.now, quiz_id: 1) }
+1.times { Response.create!(user_id: 1, announce_id: 1, answers: "[{name: 0, type: bool}]") }
