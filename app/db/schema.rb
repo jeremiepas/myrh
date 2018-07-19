@@ -14,8 +14,8 @@ ActiveRecord::Schema.define(version: 20180718170934) do
 
   create_table "announces", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
-    t.integer  "city_id"
     t.integer  "compagny_id"
+    t.integer  "city_id"
     t.date     "date"
     t.integer  "quiz_id"
     t.datetime "created_at",  null: false
@@ -59,12 +59,12 @@ ActiveRecord::Schema.define(version: 20180718170934) do
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.date    "birthdate"
     t.string  "lastname"
     t.string  "name"
-    t.string  "password"
-    t.text    "description", limit: 65535
     t.string  "email"
+    t.string  "password"
+    t.date    "birthdate"
+    t.text    "description", limit: 65535
     t.integer "compagny_id"
     t.index ["compagny_id"], name: "index_users_on_compagny_id", using: :btree
   end
