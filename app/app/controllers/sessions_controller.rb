@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
 		if @current_user[:compagny_id]
 			@compagny = Compagny.find(@current_user[:compagny_id])
 		end
-		
+
 	end
 
 	def profile
@@ -37,6 +37,13 @@ class SessionsController < ApplicationController
         	flash[:color]= "invalid"
 			render "login"
 		end
+	end
+
+	def destroy
+		session[:user_id] = nil
+		reset_session
+		@current_user = nil
+		redirect_to '/'
 	end
 
 	def logout
