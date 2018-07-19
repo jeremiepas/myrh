@@ -13,6 +13,10 @@ Rails.application.routes.draw do
   post '/login'    => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
 
+  get '/search/cities/:q' => 'search#searchCities'
+  get '/search/compagnies/:q' => 'search#searchCompagnies'
+  get '/search/users/:q' => 'search#searchUsers'
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   match ':controller(/:action(/:id))(.:format)', via: [:get, :post]
