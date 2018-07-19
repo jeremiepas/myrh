@@ -12,7 +12,7 @@ class User < ApplicationRecord
   validates :password, :confirmation => true
   validates_length_of :password, :in => 6..20, :on => :create
   validates :lastname, :presence => true, :length => { :in => 3..20 }
-  validates :name, :presence => true, :uniqueness => true, :length => { :in => 3..20 }
+  validates :name, :presence => true, :length => { :in => 3..20 }
   validates :birthdate, presence: true, optional: false
   # validates :description, presence: true, optional: false
 
