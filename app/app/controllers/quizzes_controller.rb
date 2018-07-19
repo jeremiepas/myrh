@@ -1,5 +1,7 @@
 class QuizzesController < ApplicationController
   before_action :set_quiz, only: [:show, :edit, :update, :destroy]
+  before_filter :compagny_user, :except => [:index, :show]
+
 
   # GET /quizzes
   # GET /quizzes.json
