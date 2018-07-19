@@ -26,3 +26,8 @@ body{
 	margin-left: 25%;
 	margin-top: 10%;
 }
+
+.nav-link:hover, .navbar-brand:hover, .dropdown-menu >a:hover{
+	background-color: rgb(28, 171, 255,0.5);
+
+}
