@@ -1,15 +1,18 @@
 <% @page_title = "UserAuth | Login" -%>
-<div class= "Sign_Form">
-	<h1>Log in</h1>
+<div class= "Sign_Form ">
+	<h1 class="text-center display-3">Log in</h1>
 	<%= form_tag(:action => 'login_attempt') do %>
-		<p>
-		Username or Email:</br> <%= text_field_tag(:name_or_email) %>
-		</p>
-
-		<p>
-		Password:</br> <%= password_field_tag :password %>
-		</p>
-
-		<%= submit_tag("Log In") %>
+		<div class="form-group">
+   			<label for="exampleInputEmail1">Username</label>
+    		<!-- <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"> -->
+    		<%= text_field_tag :name_or_email, '', class:'form-control', autofocus: true, placeholder:'Username/Email'%>
+  		</div>
+  		<div class="form-group">
+    		<label for="exampleInputPassword1">Password</label>
+    		<%= password_field_tag(:password, '', class:'form-control',  placeholder:'Password')%>
+  		</div>
+  		<button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
 	<% end %>
+
+</div>
 </div>

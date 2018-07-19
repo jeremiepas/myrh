@@ -10,43 +10,46 @@
       </ul>
     </div>
   <% end %>
+  
+ <div class= "Sign_Form ">
 
-  <div class="field">
-    <%= f.label :birthdate %>
-    <%= f.date_select :birthdate %>
-  </div>
+    <div class="field form-group">
+      <%= f.label :birthdate%>
+      <%= f.date_select :birthdate, class:'input-group date' %>
+    </div>
 
-  <div class="field">
-    <%= f.label :lastname %>
-    <%= f.text_field :lastname %>
-  </div>
+    <div class="field">
+      <%= f.label :lastname %>
+      <%= f.text_field :lastname, class:'form-control', placeholder:'Last Name'%>
+    </div>
 
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
+    <div class="field">
+      <%= f.label :name %>
+      <%= f.text_field :name, class:'form-control', placeholder:'Name' %>
+    </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <%= f.text_field :password %>
-  </div>
+    <div class="field">
+      <%= f.label :password %>
+      <%= f.text_field :password, class:'form-control', placeholder:'Password' %>
+    </div>
 
-  <div class="field">
-    <%= f.label :description %>
-    <%= f.text_area :description %>
-  </div>
+    <div class="field">
+      <%= f.label :description %>
+      <%= f.text_area :description, class:'form-control', placeholder:'Description'%>
+    </div>
 
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-  </div>
+    <div class="field">
+      <%= f.label :email %>
+      <%= f.text_field :email, class:'form-control', placeholder:'Email' %>
+    </div>
 
-  <div class="field">
-    <%= f.label :compagny_id %>
-    <%= f.text_field :compagny_id %>
-  </div>
+    <div class="field">
+      <%= f.label :compagny_id %>
+      <%= f.text_field :compagny_id, class:'form-control', placeholder:'Company'%>
+    </div>
 
-  <div class="actions">
-    <%= f.submit %>
+    <div class="actions">
+      <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+    </div>
   </div>
 <% end %>
