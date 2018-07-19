@@ -4,7 +4,10 @@ class SessionsController < ApplicationController
 	before_filter :save_login_state, :only => [:index, :login, :login_attempt]
 
 	def home
-		#Home Page
+		if @current_user[:compagny_id]
+			@compagny = Compagny.find(@current_user[:compagny_id])
+		end
+		
 	end
 
 	def profile
