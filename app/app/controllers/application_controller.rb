@@ -30,6 +30,15 @@ class ApplicationController < ActionController::Base
       end
   end
 
+  def profile_user
+      unless @current_user && @current_user[:id] == params[:id].to_i
+          redirect_to '/'
+          return false
+      else
+          return true
+      end
+  end
+
   #This method for prevent user to access Signup & Login Page without logout
   def save_login_state
     if session[:user_id]
