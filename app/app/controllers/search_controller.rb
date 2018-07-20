@@ -12,6 +12,14 @@ def searchCompagnies
     end
 end
 
+def redirectSearchCities
+    redirect_to "/search/cities/" + params[:city]
+end
+
+def redirectSearchCompagnies
+    redirect_to "/search/compagnies/" + params[:compagny]
+end
+
 private
 
 def search(&block)    
