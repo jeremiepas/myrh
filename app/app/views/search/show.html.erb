@@ -1,5 +1,10 @@
-<% for item in @results %>
-<h2>
-    <%= item['name'] %>
-</h2>
-<% end %>
+ <div class="container">
+    <div class="card mt-5" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title"><%= @results.compagny.name %></h5>
+        <h6 class="card-subtitle mb-2 text-muted"><%= @results.name %></h6>
+        <a href="/compagnies/<%= @results.compagny.id %>" class="card-link">Card link</a>
+    </div>
+    </div>
+    <h2 class="mt-2"></h2>
+</div>
