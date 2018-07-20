@@ -101,6 +101,16 @@
           <a class="nav-link" href="login">Login<span class="sr-only">(current)</span></a>
         </li>
       <% end %>
+
+      <form action="/redirectSearchCities" name="searchCities" class="form-inline ml-2 my-4 my-lg-0">
+        <input class="form-control mr-sm-2" name="city" type="search" placeholder="Search cities" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+
+      <form action="/redirectSearchCompagnies" name="searchCompagnies" class="form-inline ml-2 my-4 my-lg-0">
+        <input class="form-control mr-sm-2" name="compagny" type="search" placeholder="Search compagnies" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
     </ul>
   </div>
 </nav>
