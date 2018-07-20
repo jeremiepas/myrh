@@ -10,18 +10,15 @@
       </ul>
     </div>
   <% end %>
+
   <div class="field">
-    <%= f.fields_for :city do |c| %>
-      <%= c.label :name %>
-      <%= c.text_field :name %>
-    <% end %>
+    <%= f.label :city_id %>
+    <%= f.text_field :city_id %>
   </div>
 
   <div class="field">
-    <%= f.fields_for :compagny do |c| %>
-      <%= c.label :name %>
-      <%= c.text_field :name %>
-    <% end %>
+    <%= f.label :compagny_id %>
+    <%= f.text_field :compagny_id %>
   </div>
 
   <div class="field">
@@ -30,10 +27,8 @@
   </div>
 
   <div class="field">
-    <%= f.fields_for :quiz do |c| %>
-      <%= c.label :name %>
-      <%= c.text_field :name %>
-    <% end %>
+    <%= f.label :quiz_id %>
+    <%= f.text_field :quiz_id %>
   </div>
 
   <div class="actions">
