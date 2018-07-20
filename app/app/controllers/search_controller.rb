@@ -2,13 +2,16 @@ class SearchController < ApplicationController
 
 def searchCities
     search do
-    City.where :name => params[:q]
+    query = params[:q]
+    City.where('name LIKE ?', "%#{query}%").first
     end
 end
 
 def searchCompagnies
     search do
-    Compagny.where :name => params[:q]
+    query = params[:q]
+    compagny = Compagny.where('name LIKE ?', "%#{query}%").first
+    City.where("compagny_id = ?", compagny.id).first
     end
 end
 
