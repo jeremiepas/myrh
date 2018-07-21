@@ -8,7 +8,7 @@
       <th>City</th>
       <th>Compagny</th>
       <th>Date</th>
-      <th>Quizze</th>
+      <th>Quizz</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,10 +16,10 @@
   <tbody>
     <% @announces.each do |announce| %>
       <tr>
-        <td><%= announce.city %></td>
-        <td><%= announce.compagny %></td>
+        <td><%= announce.city[:name] %></td>
+        <td><%= announce.compagny[:name] %></td>
         <td><%= announce.date %></td>
-        <td><%= announce.quizze %></td>
+        <td><%= announce.quiz[:name] %></td>
         <td><%= link_to 'Show', announce %></td>
         <td><%= link_to 'Edit', edit_announce_path(announce) %></td>
         <td><%= link_to 'Destroy', announce, method: :delete, data: { confirm: 'Are you sure?' } %></td>
