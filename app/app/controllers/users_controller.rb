@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_filter :save_login_state, :only => [:new, :create]
+  before_filter :profile_user, :only => [:show]
 
   # GET /users
   # GET /users.json
